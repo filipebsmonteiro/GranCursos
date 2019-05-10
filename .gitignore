@@ -1,8 +1,6 @@
 /app/bootstrap.php.cache
 /app/cache/*
 /app/logs/*
-!app/cache/.gitkeep
-!app/logs/.gitkeep
 
 /web/assets/.idea
 /web/assets/e2e
