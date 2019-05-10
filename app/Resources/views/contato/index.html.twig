@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Lista de Contatos</h1>
+
+    <table class="table table-striped table-responsive">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Endereços</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contato in contatos %}
+            <tr>
+                <td>{{ contato.nome }}</td>
+                <td>{{ contato.email }}</td>
+                <td>{{ contato.telefone }}</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button"
+                                id="dropdownEndereco{{ contato.id }}" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                            Opções
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownEndereco{{ contato.id }}">
+                            <a class="btn btn-block dropdown-item"
+                               onClick="Modal('{{ path("index_contato_endereco", {'id' : contato.id}) }}')">Listar Endereços</a>
+                            <a class="btn btn-block dropdown-item"
+                               onClick="Modal('{{ path("new_contato_endereco", {'id' : contato.id}) }}')">Adicionar Endereço</a>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <a class="btn btn-info" href="{{ path('contato_show', { 'id': contato.id }) }}">Visualizar</a>
+                    <a class="btn btn-warning" href="{{ path('contato_edit', { 'id': contato.id }) }}">Atualizar</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('contato_new') }}">Crriar novo contato</a>
+
+{% endblock %}

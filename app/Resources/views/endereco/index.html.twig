@@ -1,0 +1,53 @@
+{% extends (extends is defined)
+    ? extends
+    : 'base.html.twig' %}
+
+{% block body %}
+
+    {% include 'aviso_angular.html.twig' %}
+
+    <h1>Lista de Endereços</h1>
+
+    <app-lista items="{{ enderecosJson }}"
+               attributes='["quadra","numero","observacao"]'
+               acoes='[{"label":"Visualizar","class":"btn-info","href":"/endereco/{id}"},{"label":"Atualizar","class":"btn-warning","href":"/endereco/{id}/edit"}]'></app-lista>
+
+    <a class="btn btn-primary" href="{{ path('endereco_new') }}">Criar novo Endereço</a>
+
+
+{#    <table class="table table-striped">#}
+{#        <thead>#}
+{#            <tr>#}
+{#                <th>Quadra</th>#}
+{#                <th>Numero</th>#}
+{#                <th>Observacao</th>#}
+{#                <th>Contatoidcontato</th>#}
+{#                <th>Actions</th>#}
+{#            </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#        {% for endereco in enderecos %}#}
+{#            <tr>#}
+{#                <td>{{ endereco.quadra }}</td>#}
+{#                <td>{{ endereco.numero }}</td>#}
+{#                <td>{{ endereco.observacao }}</td>#}
+{#                <td>{{ endereco.contatoIdContato }}</td>#}
+{#                <td>#}
+{#                    <a class="btn btn-info" href="{{ path('endereco_show', { 'id': endereco.id }) }}">Visualizar</a>#}
+{#                    <a class="btn btn-warning" href="{{ path('endereco_edit', { 'id': endereco.id }) }}">Atualizar</a>#}
+{#                </td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#        </tbody>#}
+{#    </table>#}
+{% endblock %}
+
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('assets/dist/assets/runtime.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/dist/assets/es2015-polyfills.js') }}" nomodule></script>
+    <script type="text/javascript" src="{{ asset('assets/dist/assets/polyfills.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/dist/assets/styles.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/dist/assets/vendor.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/dist/assets/main.js') }}"></script>
+{% endblock %}

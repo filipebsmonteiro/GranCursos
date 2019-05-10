@@ -1,0 +1,21 @@
+endereco_endereco:
+    resource: "@EnderecoBundle/Controller/EnderecoController.php"
+    type:     annotation
+
+contatos_contato:
+    resource: "@ContatosBundle/Controller/ContatoController.php"
+    type:     annotation
+
+#endereco:
+#    resource: "@EnderecoBundle/Controller/"
+#    type:     annotation
+#    prefix:   /
+
+#contatos:
+#    resource: "@ContatosBundle/Controller/"
+#    type:     annotation
+#    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

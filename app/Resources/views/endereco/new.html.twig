@@ -1,0 +1,47 @@
+{% extends (extends is defined)
+    ? extends
+    : 'base.html.twig' %}
+
+{% block body %}
+    <h1>Novo Endereço</h1>
+
+    <form action="{{ path('endereco_new') }}" method="POST">
+        {{ form_widget(form._token) }}
+        <div class="form-group">
+            <label class="control-label required" for="endereco_quadra">Quadra</label>
+            <input type="text" id="endereco_quadra" name="quadra" required="required"
+                   min="1" maxlength="255" class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="control-label required" for="endereco_numero">Numero</label>
+            <input type="number" id="endereco_numero" name="numero" required="required" class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="control-label required" for="endereco_observacao">Observação</label>
+            <input type="text" id="endereco_observacao" name="observacao"
+                   required="required" maxlength="255" class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="control-label required" for="endereco_contatoIdContato">Contato</label>
+            {% if(ContatoIdContato is defined) %}
+                <input type="hidden" name="contatoIdContato" value="{{ ContatoIdContato }}">
+                {% for contato in contatos %}
+                    {% if( ContatoIdContato == contato.id ) %}
+                        <input disabled class="form-control" value="{{ contato.nome }}">
+                    {% endif %}
+                {% endfor %}
+
+            {% else %}
+                <select id="endereco_contatoIdContato" name="contatoIdContato"
+                         class="form-control" required="required">
+                    <option disabled selected value="">Selecione...</option>
+                    {% for contato in contatos %}
+                        <option value="{{ contato.id }}">{{ contato.nome }}</option>
+                    {% endfor %}
+                </select>
+            {% endif %}
+        </div>
+        <input type="submit" name="submit" class="hide invisible" value="Criar" />
+        <button class="btn btn-block btn-success">Cadastrar</button>
+    </form>
+{% endblock %}

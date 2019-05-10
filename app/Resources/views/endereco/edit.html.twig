@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Atualizar Endereço</h1>
+
+    <form action="{{ path('endereco_edit', {'id' : endereco.id }) }}" method="POST">
+        {{ form_widget(edit_form._token) }}
+        <div class="form-group">
+            <label class="control-label required" for="endereco_quadra">Quadra</label>
+            <input type="text" id="endereco_quadra" name="quadra" required="required"
+                   min="1" maxlength="255" class="form-control" value="{{ endereco.quadra }}">
+        </div>
+        <div class="form-group">
+            <label class="control-label required" for="endereco_numero">Numero</label>
+            <input type="number" id="endereco_numero" name="numero" required="required"
+                   class="form-control" value="{{ endereco.numero }}">
+        </div>
+        <div class="form-group">
+            <label class="control-label required" for="endereco_observacao">Observação</label>
+            <input type="text" id="endereco_observacao" name="observacao"
+                   required="required" maxlength="255" class="form-control"
+                   value="{{ endereco.observacao }}">
+        </div>
+        <div class="form-group">
+            <label class="control-label required" for="endereco_contatoIdContato">Contato id contato</label>
+            <select  id="endereco_contatoIdContato" name="contatoIdContato"
+                     class="form-control" required="required">
+                {% for contato in contatos %}
+                    <option {% if(contato.id == endereco.contatoIdContato) %} selected {% endif %}
+                            value="{{ contato.id }}">{{ contato.nome }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <input type="submit" name="submit" class="hide invisible" value="Atualizar" />
+        <button class="btn btn-block btn-success">Atualizar</button>
+    </form>
+{#    {{ form_start(edit_form) }}#}
+{#        {{ form_widget(edit_form) }}#}
+{#        <input type="submit" class="btn btn-block btn-success" value="Atualizar" />#}
+{#    {{ form_end(edit_form) }}#}
+
+    <br/>
+    {{ form_start(delete_form) }}
+        <input type="submit" class="btn btn-block btn-danger" value="Excluir">
+    {{ form_end(delete_form) }}
+{% endblock %}

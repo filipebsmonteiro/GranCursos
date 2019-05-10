@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Endereco</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ endereco.id }}</td>
+            </tr>
+            <tr>
+                <th>Quadra</th>
+                <td>{{ endereco.quadra }}</td>
+            </tr>
+            <tr>
+                <th>Numero</th>
+                <td>{{ endereco.numero }}</td>
+            </tr>
+            <tr>
+                <th>Observacao</th>
+                <td>{{ endereco.observacao }}</td>
+            </tr>
+            <tr>
+                <th>Contato</th>
+                <td>{{ contato.nome }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-block btn-warning"
+       href="{{ path('endereco_edit', { 'id': endereco.id }) }}">Atualizar</a>
+
+    <br/>
+    {{ form_start(delete_form) }}
+        <input type="submit" class="btn btn-block btn-danger" value="Excluir">
+    {{ form_end(delete_form) }}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Editar Contato</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" class="btn btn-block btn-success" value="Atualizar dados" />
+    {{ form_end(edit_form) }}
+
+    <br/>
+    {{ form_start(delete_form) }}
+        <input type="submit" class="btn btn-block btn-danger" value="Excluir">
+    {{ form_end(delete_form) }}
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Contato</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ contato.id }}</td>
+            </tr>
+            <tr>
+                <th>Nome</th>
+                <td>{{ contato.nome }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ contato.email }}</td>
+            </tr>
+            <tr>
+                <th>Telefone</th>
+                <td>{{ contato.telefone }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-block btn-warning"
+       href="{{ path('contato_edit', { 'id': contato.id }) }}">Atualizar {{ contato.nome }}</a>
+
+    <br/>
+    {{ form_start(delete_form, {'attr': {'id': 'delete_form'}}) }}
+        <input type="submit" class="btn btn-block btn-danger" value="Excluir">
+    {{ form_end(delete_form) }}
+{% endblock %}
