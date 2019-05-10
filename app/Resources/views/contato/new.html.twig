@@ -3,10 +3,28 @@
 {% block body %}
 {#    <a class="btn btn-block btn-primary" href="{{ path('contato_index') }}">Voltar a lista</a>#}
 
-    <h1>Novo Contato</h1>
+    {% include 'aviso_angular.html.twig' %}
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" class="btn btn-block btn-success" value="Criar" />
-    {{ form_end(form) }}
+    {% if not form.vars.valid %}
+        <div class="alert alert-error">
+            {{ form_errors(form) }}
+        </div>
+    {% endif %}
+    <app-create-contato csrf="{{ form._token.vars.value }}"></app-create-contato>
+
+{#    <h1>Novo Contato</h1>#}
+
+{#    {{ form_start(form) }}#}
+{#        {{ form_widget(form) }}#}
+{#        <input type="submit" class="btn btn-block btn-success" value="Criar" />#}
+{#    {{ form_end(form) }}#}
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('assets/dist/assets/runtime.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/dist/assets/es2015-polyfills.js') }}" nomodule></script>
+    <script type="text/javascript" src="{{ asset('assets/dist/assets/polyfills.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/dist/assets/styles.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/dist/assets/vendor.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/dist/assets/main.js') }}"></script>
 {% endblock %}

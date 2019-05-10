@@ -4,8 +4,6 @@ namespace ContatosBundle\Controller;
 
 use ContatosBundle\Entity\Contato;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -51,6 +49,7 @@ class ContatoController extends Controller
 
             return $this->redirectToRoute('contato_show', array('id' => $contato->getId()));
         }
+//        die((string) $form->getErrors(true));
 
         return $this->render('contato/new.html.twig', array(
             'contato' => $contato,
