@@ -11,7 +11,8 @@ serão necessárias 2 etapas:
 
 ==============================================
 
-#1. Configurar a Aplicação
+Configurar a Aplicação
+======================
 Todo o projeto já foi configurado via .htacces 
 para funcionar melhor se utilizando um virtualHost.
 (Somente assets de imagens não carregarão caso não utilize virtual host)
@@ -54,7 +55,7 @@ no meu caso: htdocs/GranCursos/web
 
 
 
-2. Configurar o Banco de Dados!
+Configurar o Banco de Dados!
 ==============================================
 
 Crie 1 Banco de Dados com o nome grancursos
@@ -68,5 +69,5 @@ PPs.Caso necessite, usuario e senha do banco devem ser alterados no arquivo: app
  
 Aproveite!
 
-[1]: #instruções
-[2]: #instruções
+[1]: #configurar-a-aplicao
+[2]: #configurar-o-banco-de-dados
