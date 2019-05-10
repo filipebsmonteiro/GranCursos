@@ -1,0 +1,25 @@
+<table class="table table-striped table-responsive">
+  <thead>
+  <tr>
+    <th *ngFor="let attribute of attributes">{{ attribute.charAt(0).toUpperCase() + attribute.slice(1) }}</th>
+    <th>Ações</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let item of items">
+
+    <td *ngFor="let attribute of attributes">
+      {{ item[attribute] }}
+    </td>
+    <td>
+
+      <a *ngFor="let acao of acoes"
+         class="btn {{ acao.class }}"
+         href="{{ montaLink(acao.href, item) }}">{{ acao.label }}</a>
+
+    </td>
+  </tr>
+
+  </tbody>
+</table>

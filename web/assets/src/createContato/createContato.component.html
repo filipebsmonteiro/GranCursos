@@ -1,0 +1,20 @@
+<h1>Novo Contato</h1>
+
+<form action="/contato/new" method="POST">
+    <div class="form-group">
+        <label class="control-label required" for="contato_nome">Nome</label>
+        <input type="text" id="contato_nome" name="contatosbundle_contato[nome]" required="required" maxlength="255" class="form-control">
+    </div>
+    <div class="form-group">
+        <label class="control-label required" for="contato_email">Email</label>
+        <input type="email" id="contato_email" name="contatosbundle_contato[email]" required="required" class="form-control">
+    </div>
+    <div class="form-group">
+        <label class="control-label required" for="contato_telefone">Telefone</label>
+        <input type="text" id="contato_telefone" name="contatosbundle_contato[telefone]" required="required" class="form-control">
+    </div>
+    <input type="hidden" name="contatosbundle_contato[_token]" value="{{ csrf }}">
+    <input type="submit" class="hide invisible" name="submit" value="submit">
+
+    <button type="submit" class="btn btn-block btn-success">Criar</button>
+</form>
