@@ -58,12 +58,11 @@ no meu caso: htdocs/GranCursos/web
 
 Crie 1 Banco de Dados com o nome grancursos
 
-Execute o script de importação que está na raiz do projeto.
+Execute o script de importação que está na raiz do projeto: grancursos.sql.
 
 PS. O banco utilizado foi MySQL, verifique possíveis incopmatibilidades de nomeclatura.
 
-==============================================
-Caso necessite, usuario e senha do banco devem ser alterados no arquivo: app/config/parameters.yml
-==============================================
+PPs.Caso necessite, usuario e senha do banco devem ser alterados no arquivo: app/config/parameters.yml
+
  
 Aproveite!
