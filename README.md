@@ -51,9 +51,16 @@ LEMBRE-SE:
 -Configure de acordo com o nome do seu diretório htdocs,
 no meu caso: htdocs/GranCursos/web
 
--Configure para a pasta WEB
+-Configure para a pasta WEB do projeto
 
+Abra op arquivo:
+C:\Windows\System32\drivers\etc\hosts
 
+Adicione o seguinte cósdigo no final:
+```
+127.0.0.1   dev.grancursos      www.dev.grancursos
+#::1        dev.grancursos
+```
 
 Configurar o Banco de Dados!
 ==============================================
