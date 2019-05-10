@@ -6,8 +6,8 @@ Bem-vindo(a)!
 Para ser possível o teste da minha aplicação, 
 serão necessárias 2 etapas:
 
-1. Configurar a Aplicação!
-2. Configurar o Banco de Dados!
+1. [Configurar a Aplicação!][1]
+2. [Configurar o Banco de Dados!][2]
 
 ==============================================
 
@@ -52,9 +52,10 @@ no meu caso: htdocs/GranCursos/web
 
 -Configure para a pasta WEB
 
-==============================================
 
-#1. Configurar o Banco de Dados!
+
+2. Configurar o Banco de Dados!
+==============================================
 
 Crie 1 Banco de Dados com o nome grancursos
 
@@ -66,3 +67,6 @@ PPs.Caso necessite, usuario e senha do banco devem ser alterados no arquivo: app
 
  
 Aproveite!
+
+[1]: #instruções
+[2]: #instruções
